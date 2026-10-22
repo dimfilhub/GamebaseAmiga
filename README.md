@@ -48,7 +48,17 @@ The app does not ship the game files. You supply the GameBase Amiga source archi
 - The *capsimg* plugin, to read the `.ipf` disks of the SPS versions. It is not part of FS-UAE, and the repository does not include it. Download it from the [Software Preservation Society](http://www.softpres.org/) and put it in `emulator/System/CAPSImg/`, for example `emulator/System/CAPSImg/macOS/ARM64/capsimg.so` on an Apple Silicon Mac. FS-UAE finds it there on its own. Without it the `.adf` and WHDLoad versions still work.
 - Kickstart ROMs in `emulator/Kickstarts/`. The repository does not include them, because Kickstart is copyrighted: supply your own dumps. The file names must contain the version, like `Kickstart v1.3 rev 34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV).rom`. The app uses the version a game asks for, and otherwise the closest one: games that want 2.0 or newer get the oldest ROM from 2.0 up, and games that want 1.x get the newest 1.x ROM. **Kickstart 1.3** and **3.1** cover almost everything.
 
-Run the app:
+Run the app with a start script, which does the setup for you:
+
+| System | Script |
+|---|---|
+| macOS | `start_macos.command` (double-click it in Finder) |
+| Windows | `start_windows.bat` (double-click it) |
+| Linux | `start_linux.sh` (run it from a terminal, or choose "Run" in your file manager) |
+
+On the first run, the script creates a `.venv` virtual environment and installs `requirements.txt` into it. After that it only reinstalls when `requirements.txt` changes, and then starts the app. Python 3 with Tk must already be installed: the script tells you how to get it if it is missing.
+
+Or start the app yourself:
 
 ```sh
 python gamebaseamiga.py

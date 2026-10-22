@@ -1,0 +1,32 @@
+/data/*
+!/data/README.md
+/build/
+/sources/
+/dist/
+/gb_amiga_23.mdb
+__pycache__/
+/config.json
+/GamebaseAmiga.spec
+.idea/
+.venv/
+.DS_Store
+# Kickstart ROMs are copyrighted and capsimg is a separate download; FS-UAE creates its working folders next to itself
+!/emulator/Portable.ini
+/emulator/Kickstarts/*
+!/emulator/Kickstarts/.gitkeep
+!/emulator/Kickstarts/README.md
+/emulator/System/
+/emulator/Cache/
+/emulator/Data/
+/emulator/Configurations/
+/emulator/Controllers/
+/emulator/Floppies/
+/emulator/Hard Drives/
+/emulator/CD-ROMs/
+/emulator/Save States/
+/emulator/Themes/
+# FS-UAE itself is a separate GPL download; install it here or system-wide
+/emulator/FS-UAE.app/
+/emulator/FS-UAE/
+/emulator/*.exe
+/emulator/*.dll
